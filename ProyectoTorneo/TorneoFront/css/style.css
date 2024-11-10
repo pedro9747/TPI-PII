@@ -1,0 +1,138 @@
+body {
+    background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), url("../images/3.png.jpg");
+
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+    position: relative; 
+    margin: 0; 
+    height: 100%; 
+   
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+.nav-link{
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    font-size: 18px;
+    font-weight: 600;
+    color: #999999;
+    position: relative;
+    transition: color 0.25s;
+}
+
+
+
+#TextBienvenida{
+    display: flex  ;
+    text-align: right;
+    justify-content: flex-end;
+    padding-top: 20%;
+}
+
+#FormularioBox{
+    display: flex  ;
+    /* text-align: right; */
+    justify-content: flex-end;
+    padding: 5%;
+}
+
+#labelFormulario{
+    color: rgba(255, 255,255, 0.8);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding-left: 10px;
+}
+.form-control{
+    background: rgba(255, 255,255, 0.8);
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    padding:  0px 20px;
+    border: none;
+    margin-bottom: 20px;
+    color:black;
+}
+
+#FormularioBox form{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    margin-right: 20px;
+}
+
+#TextBienvenida form input{
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border:rgba(0, 0, 0, 0.3);
+}
+#miBoton::after {
+    display: none; /* Oculta la flecha */
+}
+
+.modal-content {
+    background-color: #f8f9fa; /* Cambia el color de fondo si es necesario */
+    text-align: left;
+}
+
+.modal-backdrop {
+    opacity: 0.5; /* Ajusta la opacidad del fondo, si es muy oscuro, cambia este valor */
+    --bs-backdrop-zindex: 0;
+}
+
+
+.btn-edit-deleteEquipos .btn-edit-delete-Jugadores{
+    display: flex;
+    justify-content: center;
+}
+
+#formularioInicioSesion{
+    left: -100px;
+}
+
+#boxForm{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.footer {
+   position: fixed;  /*  Cambia de absolute a relative */
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    #boxForm{
+        flex-direction: column;
+    }
+}
+
+@media(min-width: 768px){
+    .md-4{
+        width: 35%;
+    } .md-7{
+        width: 55%;
+    }
+}
