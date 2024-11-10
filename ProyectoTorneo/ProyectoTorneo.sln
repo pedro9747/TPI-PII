@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorneoApi", "TorneoApi\TorneoApi.csproj", "{F0C9E24E-1D44-470B-A5DB-ED7AC4B2B0D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorneoBack", "TorneoBack\TorneoBack.csproj", "{1A8B336F-4451-4DDE-9B0B-17E56D1CBA8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0C9E24E-1D44-470B-A5DB-ED7AC4B2B0D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0C9E24E-1D44-470B-A5DB-ED7AC4B2B0D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0C9E24E-1D44-470B-A5DB-ED7AC4B2B0D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0C9E24E-1D44-470B-A5DB-ED7AC4B2B0D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A8B336F-4451-4DDE-9B0B-17E56D1CBA8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A8B336F-4451-4DDE-9B0B-17E56D1CBA8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A8B336F-4451-4DDE-9B0B-17E56D1CBA8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A8B336F-4451-4DDE-9B0B-17E56D1CBA8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3C1E161-B88C-40DE-ACB1-D620DD96CB07}
+	EndGlobalSection
+EndGlobal

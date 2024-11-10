@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="flex align-items-center pt-4" style="background-color: #2d4354">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary w-100">
+        <div class="container-fluid">
+          <img src="../images/logo.jpg" alt="logo" width="50" height="50">
+          <a class="navbar-brand" href="index.html">TorneoApp</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="soporte.html">Torneo</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">Equipos</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Equipos.html">Ver equipos</a></li>
+                  <li><a class="dropdown-item" href="transaccion.html">Agregar equipo</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Acerca de
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Piotti Pereyra, Cibels Antonella – 412010</a></li>
+                  <li><a class="dropdown-item" href="#">Parodi, Pedro - 412055</a></li>
+                  <li><a class="dropdown-item" href="#">Vela Rodriguez, Adrián - 113201</a></li>
+                  <li><a class="dropdown-item" href="#">Acuña, Facundo - 112679</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="d-flex justify-content-end">
+              <div class="dropdown">
+                <button type="button" id="miBoton" class="btn btn-primary dropdown-toggle ms-auto"
+                  data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"
+                  style="background-color: #20212B;">
+                  Soy Árbitro
+                </button>
+                <form class="dropdown-menu py-4 p-4" id="formularioInicioSesion" ">
+                  <div class="mb-3">
+                    <label for="username" class="form-label">Nombre de usuario</label>
+                    <input type="text" name="username" class="form-control" id="username"
+                      placeholder="Ingrese su nombre de usuario" required>
+                  </div>
+                  <div class="mb-3" id="password-container">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" name="password" class="form-control" id="password"
+                      placeholder="Ingrese su contraseña" required>
+                  </div>
+                  <div class="text-center">
+                  <div class="mt-3">
+                  <button type="button" class="btn btn-primary" id="loginButton" style="background-color: #20212B;" onclick="login()"
+                    >Iniciar sesión</button>
+                  </div>
+                  <div class="mt-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registroModal">
+                      Registrarse
+                    </button>
+                  </div>
+  
+                    <div class="modal" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title fs-5" id="registroModalLabel">Formulario de Registro</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form id="formRegistro">
+                              <div class="mb-3">
+                                <label for="username" class="form-label">Nombre de usuario</label>
+                                <input type="text" class="form-control" id="usernameRegister"
+                                  placeholder="Ingrese su nombre de usuario" required>
+                              </div>
+                              <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="passwordRegister"
+                                  placeholder="Ingrese su contraseña" required>
+                              </div>
+                              <div class="mb-3">
+                                <label for="role" class="form-label">Rol</label>
+                                <select class="form-select" id="role" required>
+                                  <option value="" disabled selected>Selecciona un rol</option>
+                                  <option value="1">Administrador</option>
+                                  <option value="2">Jugador</option>
+                                  <option value="3">Árbitro</option>
+                                </select>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" onclick="registrar()"
+                                style="background-color: #20212B;">Registrarse</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container-sm py-4" id="boxForm">
+      <div class="row">
+        <div class="col-md-4">
+          <form id="equipoForm" class="mb-4">
+            <div class="d-flex justify-content-between">
+              <h2 id="tituloCargarEditar" class="text-white">Cargar equipo</h2>
+              <a
+                href="../html/Equipos.html"
+                class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                style="color: white"
+                id="verEquiposVolver"
+              >
+                Ver Equipos
+              </a>
+            </div>
+            <div class="mb-3" style="opacity: 0.5">
+              <label for="idEquipo" class="form-label" id="labelFormulario"
+                >Id del Equipo</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="idEquipo"
+                placeholder="Id equipo"
+                disabled
+              />
+            </div>
+            <div class="mb-3">
+              <label for="nombreEquipo" class="form-label" id="labelFormulario"
+                >Nombre del Equipo</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="nombreEquipo"
+                placeholder="Nombre del equipo"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="fechaFundacion"
+                class="form-label"
+                id="labelFormulario"
+                >Fecha de Fundación</label
+              >
+              <input
+                type="date"
+                class="form-control"
+                id="fechaFundacion"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary" id="guardarEquipoBtn">
+              Agregar Equipo
+            </button>
+          </form>
+
+          <div id="jugadorContainer">
+            <form id="jugadorForm" class="mb-4" style="opacity: 0.5">
+              <h2 id="JugadoresTituloForm" class="text-white">
+                Agregar Jugadores al Equipo
+              </h2>
+              <div class="mb-3">
+                <label for="idJugador" class="form-label" id="labelFormulario"
+                  >Id del Jugador</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="idJugador"
+                  placeholder="0"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label
+                  for="nombreJugador"
+                  class="form-label"
+                  id="labelFormulario"
+                  >Nombre del Jugador</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombreJugador"
+                  placeholder="Nombre del jugador"
+                  required
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label
+                  for="apellidoJugador"
+                  class="form-label"
+                  id="labelFormulario"
+                  >Apellido del Jugador</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="apellidoJugador"
+                  placeholder="Apellido del jugador"
+                  required
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="dniJugador" class="form-label" id="labelFormulario"
+                  >DNI del Jugador</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="dniJugador"
+                  placeholder="DNI del jugador"
+                  required
+                  disabled
+                />
+              </div>
+
+              <div class="mb-3 form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault1"
+                  disabled
+                />
+                <label
+                  class="form-check-label"
+                  for="flexRadioDefault1"
+                  id="labelFormulario"
+                >
+                  Con Ficha Médica
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault2"
+                  checked
+                  disabled
+                />
+                <label
+                  class="form-check-label"
+                  for="flexRadioDefault2"
+                  id="labelFormulario"
+                >
+                  Sin Ficha Médica
+                </label>
+              </div>
+
+              <div class="mb-3">
+                <label
+                  for="fechaNacimientoJugador"
+                  class="form-label"
+                  id="labelFormulario"
+                  >Fecha de Nacimiento</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="fechaNacimientoJugador"
+                  required
+                  disabled
+                />
+              </div>
+
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="posicionJugador"
+                  >Posición</label
+                >
+                <select class="form-select" id="posicionJugador" disabled>
+                  <option selected value="0"></option>
+                  <option value="1">Arquero</option>
+                  <option value="2">Defensor</option>
+                  <option value="3">Centrocampista</option>
+                  <option value="4">Delantero</option>
+                </select>
+              </div>
+
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="rolJugador">Rol</label>
+                <select class="form-select" id="rolJugador" disabled>
+                  <option selected value="0"></option>
+                  <option value="1">Capitán</option>
+                  <option value="2">Sub Capitán</option>
+                  <option value="3">Delegado</option>
+                </select>
+              </div>
+
+              <button
+                id="AgregarJugador"
+                type="submit"
+                class="btn btn-primary"
+                disabled
+              >
+                Agregar Jugador
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-7" style="margin-left: 20px">
+          <h2 class="text-white mt-4">Jugadores del Equipo</h2>
+          <table class="table table-striped table-bordered text-white mt-3">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">DNI</th>
+                <th scope="col">Ficha Médica</th>
+                <th scope="col">Fecha Nacimiento</th>
+                <th scope="col">Posición</th>
+                <th scope="col">Rol</th>
+                <th scope="col" style="opacity: 0.9">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="jugadoresTableBody"></tbody>
+          </table>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            id="guardarCambiosBtn"
+            disabled
+          >
+            Guardar Cambios
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer class="footer mt-auto py-2 bg-body-tertiary text-center" style="bottom: 0; width: 100%;"
+    >
+      <div class="container">
+        <span class="text-muted">TUP-UTN Programación II.</span>
+      </div>
+    </footer>
+    <script src="../js/transaccion/equipo_jugadores.js"></script>
+    <script src="../js/transaccion/editar_jugador.js"></script>
+    <script src="../js/iniciosesion.js"></script>
+  </body>
+</html>
